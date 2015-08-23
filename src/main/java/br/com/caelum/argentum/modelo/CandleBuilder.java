@@ -10,6 +10,7 @@ public class CandleBuilder {
 	private double volume;
 	private Calendar data;
 	
+	
 	public CandleBuilder comAbertura(double abertura){
 		this.abertura = abertura;
 		return this;

@@ -12,6 +12,18 @@ public final class Candlestick {
 	private final Calendar data;
 	
 	public Candlestick(double abertura, double fechamento, double minimo, double maximo, double volume, Calendar data) {
+		if(maximo < minimo){
+			throw new IllegalArgumentException("O valor maxímo não deve ser menor que o mínimo!");
+		}
+		
+		if(data == null){
+			throw new IllegalArgumentException("A data do Candlestick não deve ser null!");
+		}
+		
+		if(abertura < 0 || fechamento < 0 || minimo < 0 || maximo < 0 || volume < 0){
+			throw new IllegalArgumentException("O Candlestick não pode ser criados com valores negativos!");
+		}
+			
 		this.abertura = abertura;
 		this.fechamento = fechamento;
 		this.minimo = minimo;
@@ -45,7 +57,7 @@ public final class Candlestick {
 	}
 	
 	public boolean isAlta() {
-		return this.abertura < this.fechamento;
+		return this.abertura <= this.fechamento;
 	}
 	
 	public boolean isBaixa() {
