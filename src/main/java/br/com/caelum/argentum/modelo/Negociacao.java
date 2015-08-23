@@ -12,12 +12,14 @@ public final class Negociacao implements Comparable<Negociacao>{
 		if(data == null){
 			throw new IllegalArgumentException("A data não pode ser nula");
 		}
+		
 		if(preco < 0){
 			throw new IllegalArgumentException("O preço da negociação não pode ser menor que zero");
 		}
+		
 		this.preco = preco;
 		this.quantidade = quantidade;
-		this.data = data;
+		this.data = (Calendar) data.clone();
 	}
 
 	public double getPreco() {

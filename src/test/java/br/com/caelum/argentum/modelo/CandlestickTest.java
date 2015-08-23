@@ -114,7 +114,7 @@ public class CandlestickTest {
 		
 		CandlestickFactory fabrica = new CandlestickFactory();
 		List<Candlestick> candles = fabrica.constroiCandleParaData(negociacoes);
-		System.out.println(candles);
+		
 		assertEquals(3, candles.size());
 		assertEquals(45.0, candles.get(0).getAbertura(), 0.00001);
 		assertEquals(39.8, candles.get(0).getFechamento(), 0.00001);

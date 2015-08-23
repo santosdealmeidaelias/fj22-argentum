@@ -13,6 +13,5 @@ public class TestaCandlestickBuilder {
 			.comData(new GregorianCalendar(2015, 7, 22, 0, 0, 0))
 			.geraCandle();
 		
-		System.out.println(candle);
 	}
 }
